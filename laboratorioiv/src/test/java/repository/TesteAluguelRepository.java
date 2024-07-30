@@ -25,19 +25,20 @@ public class TesteAluguelRepository {
     private static void listarComAtraso(AluguelRepository rep) {
         System.out.println("Buscando aluguéis com atraso: ");
         List<Aluguel> lista = rep.listagemComAtraso();
-        lista.forEach(a -> System.out.println(a.getObservacao()));
-        System.out.println("Busca finalizada!");
+        lista.forEach(a -> System.out.println("Observação: " + a.getObservacao() + " - Imóvel: " +  a.getLocacao().getImovel().getId()));
+        System.out.println("Busca finalizada!\n");
     }
 
     private static void listar(AluguelRepository rep, String cliente) {
         System.out.println("Buscando aluguéis do usuário " + cliente);
         List<Aluguel> lista = rep.listagem(cliente);
         try {
-        lista.forEach(aluguel -> System.out.println("VENCE EM: " + aluguel.getDataVencimento()));
+        lista.forEach(aluguel -> System.out.println("VENCE EM: " + aluguel.getDataVencimento() +
+                " - Imóvel: " + aluguel.getLocacao().getImovel().getId()));
         } catch (RuntimeException err) {
             System.out.println(err.toString());
         } finally {
-            System.out.println("Listagem finalizada!");
+            System.out.println("Listagem finalizada!\n");
         }
     }
 }

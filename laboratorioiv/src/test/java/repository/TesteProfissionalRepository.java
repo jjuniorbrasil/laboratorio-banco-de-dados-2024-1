@@ -51,6 +51,6 @@ public class TesteProfissionalRepository {
     static void buscaPorId(ProfissionalRepository rep) {
         // Busca por ID
         Profissional p = rep.buscaPorId(1);
-        System.out.println(p.getId() + ": " + p.getNome());
+        System.out.println("Profissional encontrado: " + p.getId() + ": " + p.getNome() + "\n");
     }
 }
