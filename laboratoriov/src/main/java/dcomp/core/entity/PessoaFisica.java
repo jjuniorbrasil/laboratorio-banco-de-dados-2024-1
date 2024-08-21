@@ -1,15 +1,24 @@
 package dcomp.core.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Table(name = "Pessoa_fisica")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
 public class PessoaFisica {
-    private String nome;
-
+    @Id
     @Getter
     private String cpf;
+
+    @Getter  @Column(nullable = false)
+    private String nome;
+
+
+    @Getter @Setter @Column(nullable = false)
     private String email;
+
+    @Getter @Setter @Column(nullable = false)
     private String telefone;
 }

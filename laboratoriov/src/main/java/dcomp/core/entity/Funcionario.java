@@ -1,30 +1,34 @@
 package dcomp.core.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Entity
 @NoArgsConstructor
 public class Funcionario extends PessoaFisica {
 
-    @Getter
-    private FuncionarioPK key;
+    @EmbeddedId @Getter
+    private FuncionarioPK key = new FuncionarioPK();
 
-    @Getter @Setter
+    @Getter @Column(nullable = false)
+    private int matricula;
+
+    @Getter @Setter @OneToMany(mappedBy = "tutor")
     private Set<Dependente> dependentes = new LinkedHashSet<>();
 
-    @Getter @Setter
+    @Getter @Setter @ManyToOne @JoinColumn(name = "id_filial") @MapsId("filialId")
     private Filial filial;
 
-    public Funcionario (String nome, String cpf, String email, String telefone , FuncionarioPK key , Set<Dependente> dependentes){
+    public Funcionario (String nome, String cpf, String email, String telefone , int matricula, Set<Dependente> dependentes,Filial filial){
         super(nome,cpf,email,telefone);
-        this.key = key;
+        this.matricula = matricula;
         this.dependentes.addAll(dependentes);
+        this.filial = filial;
         key.setCpf(super.getCpf());
+        key.setFilialId(filial.getId());
     }
 }

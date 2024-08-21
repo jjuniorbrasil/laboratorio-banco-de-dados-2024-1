@@ -7,8 +7,8 @@ import java.io.Serializable;
 
 @Data
 @Embeddable
-class FuncionarioPK implements Serializable {
+public class DistanciaPK implements Serializable {
 
-    private String cpf;
-    private int filialId;
+    private int cidadeOrigemid;
+    private int cidadeDestinoid;
 }

@@ -1,7 +1,26 @@
 package dcomp.core.entity;
 
-public class Veiculo {
-    private VeiculoPK key;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@NoArgsConstructor
+public class Veiculo implements EntidadeBase {
+
+    @EmbeddedId @Getter
+    private VeiculoPK key = new VeiculoPK();
+
+    @Getter @Setter @ManyToOne @MapsId("filialId") @JoinColumn(name = "id_filial")
     private Filial filial;
+
+    @Getter @Setter  @ManyToOne @JoinColumn(name = "id_tipo")
     private TipoVeiculo tipo;
+
+    public Veiculo( Filial filial, TipoVeiculo tipo) {
+        this.filial = filial;
+        this.tipo = tipo;
+        key.setFilialId(filial.getId());
+    }
 }
