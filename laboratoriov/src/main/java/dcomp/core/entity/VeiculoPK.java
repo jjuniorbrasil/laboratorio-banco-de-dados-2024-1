@@ -10,6 +10,6 @@ import java.io.Serializable;
 @Embeddable
 class VeiculoPK implements Serializable {
     private String numeroPlaca;
-    private int filialId;
+    private Integer filialId;
 
 }

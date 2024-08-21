@@ -12,7 +12,7 @@ import java.io.Serializable;
  class DependentePK implements Serializable{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String cpfTutor;
 }

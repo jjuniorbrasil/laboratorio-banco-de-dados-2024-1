@@ -1,7 +1,6 @@
 package dcomp.core.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +9,10 @@ import java.util.LinkedList;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
-public class Cidade {
-    @Getter
-    private int id;
+public class Cidade implements EntidadeBase  {
+
+    @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Getter
     private String uf;
@@ -23,7 +23,12 @@ public class Cidade {
     @Getter
     private String estado;
 
-    @OneToMany
+    @OneToMany(mappedBy = "Origem")
     private LinkedList<Distancia> distancias = new LinkedList<>();
 
+
+    @Override
+    public Integer getKey() {
+        return this.id;
+    }
 }

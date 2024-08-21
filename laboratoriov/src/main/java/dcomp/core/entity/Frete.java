@@ -12,9 +12,10 @@ import java.util.LinkedList;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Frete {
+public class Frete implements EntidadeBase {
+
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private Integer codigo;
 
     @Getter @Setter @Column(name="numero_nota_fiscal",nullable = false)
     private int numeroNotaFiscal;
@@ -40,5 +41,10 @@ public class Frete {
 
     public void calcularFrete(){
 
+    }
+
+    @Override
+    public Integer getKey() {
+        return this.codigo;
     }
 }

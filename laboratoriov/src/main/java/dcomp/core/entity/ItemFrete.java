@@ -9,9 +9,10 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemFrete {
+public class ItemFrete implements EntidadeBase{
+
     @Id @Getter
-    private int id;
+    private Integer id;
 
     @Getter @Setter @Column(nullable = false)
     private String descricao;
@@ -21,4 +22,9 @@ public class ItemFrete {
 
     @ManyToOne @MapsId @JoinColumn(name ="id_frete")
     private Frete frete;
+
+    @Override
+    public Integer getKey() {
+        return this.id;
+    }
 }

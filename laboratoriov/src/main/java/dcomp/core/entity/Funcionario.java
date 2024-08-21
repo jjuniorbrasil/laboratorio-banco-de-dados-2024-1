@@ -17,7 +17,7 @@ public class Funcionario extends PessoaFisica {
     @Getter @Column(nullable = false)
     private int matricula;
 
-    @Getter @Setter @OneToMany(mappedBy = "tutor")
+    @Getter @Setter @OneToMany(mappedBy = "tutor",cascade = CascadeType.ALL)
     private Set<Dependente> dependentes = new LinkedHashSet<>();
 
     @Getter @Setter @ManyToOne @JoinColumn(name = "id_filial") @MapsId("filialId")

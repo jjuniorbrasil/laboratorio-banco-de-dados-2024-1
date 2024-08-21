@@ -10,5 +10,5 @@ import java.io.Serializable;
 class FuncionarioPK implements Serializable {
 
     private String cpf;
-    private int filialId;
+    private Integer filialId;
 }

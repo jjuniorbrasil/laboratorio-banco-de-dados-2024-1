@@ -7,14 +7,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class TipoVeiculo {
+public class TipoVeiculo implements EntidadeBase {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String descricao;
 
     @Column(name = "peso_max")
     private float pesoMaximo;
 
+    @Override
+    public Integer getKey() {
+        return this.id;
+    }
 }

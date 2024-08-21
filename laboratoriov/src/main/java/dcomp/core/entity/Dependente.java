@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
-public class Dependente {
+public class Dependente implements EntidadeBase{
 
     @EmbeddedId @Getter
     private DependentePK key = new DependentePK();

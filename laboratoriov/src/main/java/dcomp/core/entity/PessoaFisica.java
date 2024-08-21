@@ -7,9 +7,9 @@ import lombok.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
-public class PessoaFisica {
-    @Id
-    @Getter
+public class PessoaFisica implements EntidadeBase {
+
+    @Id @Getter
     private String cpf;
 
     @Getter  @Column(nullable = false)
@@ -21,4 +21,9 @@ public class PessoaFisica {
 
     @Getter @Setter @Column(nullable = false)
     private String telefone;
+
+    @Override
+    public String getKey() {
+        return cpf;
+    }
 }

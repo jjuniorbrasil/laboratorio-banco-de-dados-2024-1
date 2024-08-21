@@ -8,9 +8,10 @@ import lombok.Setter;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
-public class Filial {
+public class Filial implements EntidadeBase {
+
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Getter @Column(nullable = false)
     private String nome;
@@ -20,4 +21,9 @@ public class Filial {
 
     @Getter @Setter @Column(nullable = false)
     private String telefone;
+
+    @Override
+    public Integer getKey() {
+        return this.id;
+    }
 }

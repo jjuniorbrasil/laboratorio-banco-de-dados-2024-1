@@ -12,7 +12,7 @@ import lombok.Setter;
 public class CategoriaFrete implements EntidadeBase {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Getter @Setter @Column(nullable = false)
     private String nome;
@@ -22,4 +22,9 @@ public class CategoriaFrete implements EntidadeBase {
 
     @Getter @Setter @Column(name = "percentual_adicional",nullable = false)
     private float percentualAdicional;
+
+    @Override
+    public Integer getKey() {
+        return this.id;
+    }
 }
