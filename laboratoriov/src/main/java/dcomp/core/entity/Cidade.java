@@ -4,11 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.LinkedList;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
+@Table(name = "cidade")
 public class Cidade implements EntidadeBase  {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +25,7 @@ public class Cidade implements EntidadeBase  {
     @Getter
     private String estado;
 
-    @OneToMany(mappedBy = "Origem")
+    @OneToMany(mappedBy = "Origem") @Getter @Setter
     private LinkedList<Distancia> distancias = new LinkedList<>();
 
 

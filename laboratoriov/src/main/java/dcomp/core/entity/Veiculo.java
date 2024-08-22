@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
+@Table(name = "veiculo")
 public class Veiculo implements EntidadeBase {
 
     @EmbeddedId @Getter

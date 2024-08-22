@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
+@Table(name = "dependente")
 public class Dependente implements EntidadeBase{
 
     @EmbeddedId @Getter
@@ -21,13 +22,13 @@ public class Dependente implements EntidadeBase{
     @Getter @Column(nullable = false)
     private LocalDate dataNascimento;
 
-    @ManyToOne @Getter @Setter @MapsId("cpftutor")
+    @ManyToOne @Getter @Setter @MapsId("cpfTutor")
     private Funcionario tutor;
 
     public Dependente( String nome, LocalDate dataNascimento, Funcionario tutor ) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.tutor = tutor;
-        key.setCpfTutor(tutor.getKey().getCpf());
+        key.setCpfTutor(tutor.getCpf());
     }
 }

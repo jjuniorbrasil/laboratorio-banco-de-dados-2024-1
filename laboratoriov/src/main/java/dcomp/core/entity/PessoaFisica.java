@@ -3,7 +3,7 @@ package dcomp.core.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name = "Pessoa_fisica")
+@Table(name = "pessoa_fisica")
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
@@ -23,7 +23,8 @@ public class PessoaFisica implements EntidadeBase {
     private String telefone;
 
     @Override
-    public String getKey() {
+    public Object getKey() {
         return cpf;
+
     }
 }
