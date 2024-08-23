@@ -12,6 +12,7 @@ import java.util.LinkedList;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "frete")
 public class Frete implements EntidadeBase {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,13 +36,30 @@ public class Frete implements EntidadeBase {
     @Getter @Setter @ManyToOne @JoinColumn(name = "id_cidade_destino")
     private Cidade cidadeDestino;
 
-    @Getter @Setter @ManyToOne @JoinColumn(name = "placa_veiculo")
+    @Getter @Setter @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "placa_veiculo", referencedColumnName = "numero_placa"),
+            @JoinColumn(name = "id_filial", referencedColumnName = "id_filial")
+    })
     private Veiculo veiculo;
 
 
-    public void calcularFrete(){
-
+    public BigDecimal calcularFrete(){
+        BigDecimal distancia=BigDecimal.valueOf(DistanciaDestino_Origem());
+        return valorKmRodado.multiply(distancia);
     }
+
+    private int DistanciaDestino_Origem(){
+        int quilometros=0;
+        for(Distancia distancia : cidadeOrigem.getDistancias()){
+            if(distancia.getDestino()==cidadeDestino){
+                quilometros=distancia.getQuilometros();
+            }
+        }
+        return quilometros;
+    }
+
+
 
     @Override
     public Integer getKey() {

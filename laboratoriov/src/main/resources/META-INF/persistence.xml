@@ -12,10 +12,6 @@
             <property name="javax.persistence.jdbc.password" value="rootsenha" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
-            <!-- Cria o banco de dados novamente a cada execução -->
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/banco-de-dados/carregar-dados.sql"/>
-
             <!-- Hibernate properties -->
             <property name="hibernate.show_sql" value="false" />
             <property name="hibernate.format_sql" value="true" />

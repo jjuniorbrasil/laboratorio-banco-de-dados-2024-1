@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
+@Table(name = "distancia")
 public class Distancia implements EntidadeBase {
 
     @Getter @EmbeddedId

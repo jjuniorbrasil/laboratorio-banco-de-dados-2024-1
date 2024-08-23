@@ -9,6 +9,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "item_frete")
 public class ItemFrete implements EntidadeBase{
 
     @Id @Getter

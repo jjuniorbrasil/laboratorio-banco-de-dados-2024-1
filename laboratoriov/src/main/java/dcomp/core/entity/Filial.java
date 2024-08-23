@@ -8,6 +8,7 @@ import lombok.Setter;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
+@Table(name = "filial")
 public class Filial implements EntidadeBase {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
