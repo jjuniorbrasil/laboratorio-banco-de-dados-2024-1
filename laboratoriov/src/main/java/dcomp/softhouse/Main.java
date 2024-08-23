@@ -11,9 +11,6 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("laboratoriov");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Filial filial = new Filial(null,"Pedreiros De Sodftare Company","Na puta que pariu","98822-3405");
-        em.persist(filial);
-        em.getTransaction().commit();
         em.close();
         emf.close();
 
