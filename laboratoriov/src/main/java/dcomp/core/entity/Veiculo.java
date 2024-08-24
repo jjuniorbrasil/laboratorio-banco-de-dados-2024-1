@@ -8,8 +8,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @Table(name = "veiculo")
-public class Veiculo implements EntidadeBase {
-
+public class Veiculo implements EntidadeBase<VeiculoPK> {
     @EmbeddedId @Getter
     private VeiculoPK key = new VeiculoPK();
 

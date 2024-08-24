@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Data
 @Embeddable
 public class DistanciaPK implements Serializable {
-
     private Integer cidadeOrigemId;
     private Integer cidadeDestinoId;
 }

@@ -1,6 +1,5 @@
 package dcomp.core.entity;
 
-public interface EntidadeBase <Chave> {
-
+public interface EntidadeBase<Chave> {
         Chave getKey();
 }

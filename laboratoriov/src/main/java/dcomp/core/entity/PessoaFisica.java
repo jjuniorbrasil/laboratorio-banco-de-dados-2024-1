@@ -2,19 +2,19 @@ package dcomp.core.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Table(name = "pessoa_fisica")
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
-public class PessoaFisica implements EntidadeBase {
-
+@SuperBuilder
+public abstract class PessoaFisica implements EntidadeBase<String> {
     @Id @Getter
     private String cpf;
 
     @Getter  @Column(nullable = false)
     private String nome;
-
 
     @Getter @Setter @Column(nullable = false)
     private String email;
@@ -23,8 +23,7 @@ public class PessoaFisica implements EntidadeBase {
     private String telefone;
 
     @Override
-    public Object getKey() {
+    public String getKey() {
         return cpf;
-
     }
 }

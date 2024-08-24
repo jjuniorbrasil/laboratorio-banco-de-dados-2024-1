@@ -1,10 +1,7 @@
 package dcomp.core.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.LinkedList;
@@ -13,15 +10,15 @@ import java.util.LinkedList;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "frete")
-public class Frete implements EntidadeBase {
-
+@Builder
+public class Frete implements EntidadeBase<Integer> {
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
-    @Getter @Setter @Column(name="numero_nota_fiscal",nullable = false)
+    @Getter @Setter @Column(name="numero_nota_fiscal", nullable = false, unique = true)
     private int numeroNotaFiscal;
 
-    @Getter @Setter @Column(name="valor_Km_rodado",nullable = false)
+    @Getter @Setter @Column(name="valor_Km_rodado", nullable = false)
     private BigDecimal valorKmRodado;
 
     @ManyToOne @JoinColumn(name = "id_categoria")
@@ -58,8 +55,6 @@ public class Frete implements EntidadeBase {
         }
         return quilometros;
     }
-
-
 
     @Override
     public Integer getKey() {

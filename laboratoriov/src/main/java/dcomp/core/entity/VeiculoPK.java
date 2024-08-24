@@ -12,5 +12,4 @@ class VeiculoPK implements Serializable {
     @Column(name = "numero_placa")
     private String numeroPlaca;
     private Integer filialId;
-
 }

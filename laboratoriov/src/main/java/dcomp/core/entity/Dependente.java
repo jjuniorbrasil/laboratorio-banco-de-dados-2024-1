@@ -12,7 +12,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = "dependente")
 public class Dependente implements EntidadeBase{
-
     @EmbeddedId @Getter
     private DependentePK key = new DependentePK();
 

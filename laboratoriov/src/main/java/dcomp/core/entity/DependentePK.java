@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Data
 @Embeddable
  class DependentePK implements Serializable{
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

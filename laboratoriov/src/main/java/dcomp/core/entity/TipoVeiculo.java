@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tipo_veiculo")
-public class TipoVeiculo implements EntidadeBase {
-
+public class TipoVeiculo implements EntidadeBase<Integer> {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
