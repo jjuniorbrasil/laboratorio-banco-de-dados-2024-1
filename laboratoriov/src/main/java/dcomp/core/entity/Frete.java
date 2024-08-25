@@ -40,7 +40,6 @@ public class Frete implements EntidadeBase<Integer> {
     })
     private Veiculo veiculo;
 
-
     public BigDecimal calcularFrete(){
         BigDecimal distancia=BigDecimal.valueOf(DistanciaDestino_Origem());
         return valorKmRodado.multiply(distancia);

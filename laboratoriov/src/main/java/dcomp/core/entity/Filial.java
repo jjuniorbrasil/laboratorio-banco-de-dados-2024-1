@@ -9,8 +9,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor @AllArgsConstructor
 @Table(name = "filial")
-public class Filial implements EntidadeBase {
-
+public class Filial implements EntidadeBase<Integer> {
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor @AllArgsConstructor
 @Table(name = "cidade")
+@Builder
 public class Cidade implements EntidadeBase<Integer>  {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

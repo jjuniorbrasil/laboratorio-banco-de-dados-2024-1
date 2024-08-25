@@ -1,6 +1,5 @@
 package dcomp.core.repository;
 
-import dcomp.core.entity.Cliente;
 import dcomp.core.entity.EntidadeBase;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -15,7 +14,7 @@ public class DAOGenerico<Generic extends EntidadeBase<?>> {
         this.em = em;
     }
 
-    public <Generic, ID> Generic buscaPorId(Class<Generic> classe, ID chave) {
+    public <generic, ID> generic buscaPorId(Class<generic> classe, ID chave) {
         return em.find(classe, chave);
     }
 

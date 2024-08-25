@@ -24,7 +24,8 @@ public class Dependente implements EntidadeBase{
     @ManyToOne @Getter @Setter @MapsId("cpfTutor")
     private Funcionario tutor;
 
-    public Dependente( String nome, LocalDate dataNascimento, Funcionario tutor ) {
+    @Builder
+    public Dependente(String nome, LocalDate dataNascimento, Funcionario tutor) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.tutor = tutor;

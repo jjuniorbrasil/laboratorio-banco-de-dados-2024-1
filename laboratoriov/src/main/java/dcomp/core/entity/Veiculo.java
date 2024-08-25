@@ -18,7 +18,7 @@ public class Veiculo implements EntidadeBase<VeiculoPK> {
     @Getter @Setter  @ManyToOne @JoinColumn(name = "id_tipo")
     private TipoVeiculo tipo;
 
-    public Veiculo( Filial filial, TipoVeiculo tipo) {
+    public Veiculo(Filial filial, TipoVeiculo tipo) {
         this.filial = filial;
         this.tipo = tipo;
         key.setFilialId(filial.getId());

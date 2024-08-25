@@ -1,15 +1,13 @@
 package dcomp.core.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoriaFrete implements EntidadeBase {
+@Builder
+public class CategoriaFrete implements EntidadeBase<Integer> {
 
     @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
