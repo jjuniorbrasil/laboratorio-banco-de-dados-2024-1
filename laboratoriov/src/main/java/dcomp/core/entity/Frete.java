@@ -21,7 +21,7 @@ public class Frete implements EntidadeBase<Integer> {
     @Getter @Setter @Column(name="valor_Km_rodado", nullable = false)
     private BigDecimal valorKmRodado;
 
-    @ManyToOne @JoinColumn(name = "id_categoria")
+    @Getter @ManyToOne @JoinColumn(name = "id_categoria")
     private CategoriaFrete categoria;
 
     @Getter @Setter @ManyToOne @JoinColumn(name = "id_cliente")
