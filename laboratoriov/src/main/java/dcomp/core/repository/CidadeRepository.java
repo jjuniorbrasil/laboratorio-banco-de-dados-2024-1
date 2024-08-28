@@ -1,7 +1,9 @@
 package dcomp.core.repository;
 
 import dcomp.core.entity.Cidade;
+import dcomp.core.entity.Distancia;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class CidadeRepository {
@@ -30,4 +32,10 @@ public class CidadeRepository {
 
     // REMOVER
     // Não implementado
+     public List<Distancia> buscarDistanciasPorCidade(Integer cidadeId) {
+        String jpql = "SELECT d FROM Distancia d WHERE d.origem.id = :cidadeId OR d.destino.id = :cidadeId";
+       TypedQuery<Distancia> query = em.createQuery(jpql, Distancia.class);
+       query.setParameter("cidadeId", cidadeId);
+       return query.getResultList();
+    }
 }

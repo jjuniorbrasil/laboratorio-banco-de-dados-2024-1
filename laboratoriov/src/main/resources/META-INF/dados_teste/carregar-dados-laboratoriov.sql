@@ -31,7 +31,8 @@ INSERT INTO cidade (id, estado, nome, uf) VALUES (8, 'Pernambuco', 'Recife', 'PE
 INSERT INTO cidade (id, estado, nome, uf) VALUES (9, 'Paraná', 'Curitiba', 'PR');
 INSERT INTO cidade (id, estado, nome, uf) VALUES (10, 'Ceará', 'Fortaleza', 'CE');
 
-INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (2, 1, 430);  -- Rio de Janeiro para São Paulo
+INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (2, 1, 500);  -- Rio de Janeiro para São Paulo
+INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (1, 2, 500);  -- São Paulo para Rio de Janeiro
 INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (3, 1, 586);  -- Belo Horizonte para São Paulo
 INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (4, 1, 926);  -- Goiânia para São Paulo
 INSERT INTO distancia (id_cidade_destino, id_cidade_origem, quilometros) VALUES (5, 1, 705);  -- Florianópolis para São Paulo

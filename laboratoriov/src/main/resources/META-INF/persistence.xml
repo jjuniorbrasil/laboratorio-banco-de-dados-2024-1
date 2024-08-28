@@ -9,7 +9,7 @@
             <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/laboratoriov?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;createDatabaseIfNotExist=true"/>
             <property name="jakarta.persistence.jdbc.user" value="root" />
-            <property name="jakarta.persistence.jdbc.password" value="rootsenha" />
+            <property name="jakarta.persistence.jdbc.password" value="IDUNO" />
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
             <!-- Cria o banco de dados novamente a cada execução -->
