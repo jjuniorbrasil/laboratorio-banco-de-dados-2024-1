@@ -10,7 +10,7 @@ import jakarta.persistence.Persistence;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class testeCadastroFrete {
+public class TestaCadastroFrete {
     public static void main(String[] args) {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("laboratoriov");
         EntityManager manager = factory.createEntityManager();

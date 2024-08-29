@@ -38,7 +38,7 @@ O projeto foi dividido em camadas `Model`, `Repository` e `Service`, partindo do
 
 ## Funcionalidades
 
-- **`Exemplo`**: descrição.  
+- **`CadastroFrete`**: classe de serviço implementada a partir de entidades e repositórios. Registra fretes no banco de dados.  
 
 # Desenvolvido por
 
