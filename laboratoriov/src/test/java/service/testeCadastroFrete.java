@@ -20,10 +20,8 @@ public class testeCadastroFrete {
         VeiculoRepository veiculorepo = new VeiculoRepository(manager);
         CategoriaFreteRepository cadastroFreterepo = new CategoriaFreteRepository(manager);
 
-        CadastroFrete cadastrofrete = new CadastroFrete(freterepo, cidrepo);
+        CadastroFrete cadastrofrete = new CadastroFrete(freterepo, cidrepo, manager);
 
-        // Inicia uma transação para registrar um frete
-        manager.getTransaction().begin();
         cadastrofrete.registrarFrete(
                 clienterepo.buscaPorCpf("123.456.789-01"),
                 cadastroFreterepo.buscaPorId(2),
@@ -34,7 +32,6 @@ public class testeCadastroFrete {
                 new BigDecimal(1),
                 20
         );
-        manager.getTransaction().commit();
 
         // Exibe a categoria do frete registrado
         System.out.print("\n\nFrete da categoria " + freterepo.buscaPorNum(1001).getCategoria().getNome() + "\n\n");
